@@ -16,7 +16,4 @@ import { trigger, transition, style, animate } from '@angular/animations';
 })
 export class HomePageComponent {
   
-  handleLogout(value:boolean){
-    
-  }
 }

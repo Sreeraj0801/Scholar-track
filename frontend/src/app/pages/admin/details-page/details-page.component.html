@@ -1,0 +1,20 @@
+<div class="mt-24">
+    <div class="flex  text-end justify-end md:px-10">
+        <app-button text="+ Domain" (btnClick)="hancleModalClick('domain')"></app-button>
+        <app-button text="+ Qualification" (btnClick)="hancleModalClick('qualification')"></app-button>
+    </div>
+</div>
+
+<app-modal [(isOpen)]="domainModal" heading="Add Domain">
+    <app-mini-form label="Domain Name : " name="domain" 
+    (value)="handleSubmit($event)"
+    [content]="contentValue">
+    </app-mini-form>
+</app-modal>
+
+<app-modal [(isOpen)]="qualificationModal" heading="Add Domain">
+    <app-mini-form label="Qualification : " name="qualification" 
+    (value)="handleQaulificationSubmit($event)"
+    [content]="contentValue">
+    </app-mini-form>
+</app-modal>
