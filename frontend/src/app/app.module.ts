@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
+import { ComponentsModule } from './shared/components/components.module';
 
 
 @NgModule({
@@ -14,6 +15,7 @@ import { HttpClientModule } from '@angular/common/http';
   ],
   imports: [
     BrowserModule,
+    ComponentsModule,
     ToastrModule.forRoot(),
     HttpClientModule,
     BrowserAnimationsModule,

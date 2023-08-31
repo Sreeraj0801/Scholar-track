@@ -24,13 +24,15 @@ export class LoginPageComponent implements OnDestroy  {
     if (form.valid) {
       const subscription = this._service.adminLogin(form.value)
       .subscribe(response => {
-        localStorage.setItem('adminToken',response?.accessToken)
+        localStorage.setItem('adminToken',response?.accessToken);
+        this.httpSubscription.push(subscription);
       },err => {
       console.log(err);
       this._toast.showError(err.error.error ? err.error.error:'something went wrong')})   
     } else {
       this._toast.showError('Form submission failed. Please check the form.');
     }
+
   }
 
 

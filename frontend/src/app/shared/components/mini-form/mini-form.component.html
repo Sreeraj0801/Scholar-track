@@ -1,0 +1,26 @@
+<hr>
+<form #miniForm="ngForm" (ngSubmit)="onSubmit(miniForm)" class=" md:p-20 p-5 grid gap-4">
+    <div>
+      <label [for]="label" class="text-xl font-semibold text-white">{{label}}</label>
+      <input 
+      type="text"
+      [name]="name"
+      [value]="content"
+      placeholder="enter the admin-mail"
+      class="md:h-12 text-lg bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"  
+      ngModel
+      required
+      >
+    </div>
+    <div class="-mt-2">
+      <div *ngIf="miniForm.controls[name].touched && miniForm.controls[name].hasError('required')" class="text-red-400">
+        Value cannot be empty.
+      </div>
+      </div>
+    <div class="text-center mt-5">
+      <app-button
+      text="Submit"
+      type="submit"
+      design="text-gray-900 bg-gradient-to-r from-teal-200 to-lime-200 hover:bg-gradient-to-l hover:from-teal-200 hover:to-lime-200 focus:ring-4 focus:outline-none focus:ring-lime-200 dark:focus:ring-teal-700 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2"></app-button>
+    </div>
+  </form>
